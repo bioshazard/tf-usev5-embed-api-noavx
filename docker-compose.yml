@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+
+  embed:
+    container_name: embed
+    image: python:3.9
+    restart: unless-stopped
+    network_mode: host
+    working_dir: /app
+    command: python embed.py
+    environment:
+      PYTHONUSERBASE: /mnt/vendor # https://blog.theodo.com/2015/04/docker-and-virtualenv-a-clean-way-to-locally-install-python-dependencies-with-pip-in-docker/
+      PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
+    volumes:
+      - ./src:/app
+      - pyvendor:/mnt/vendor
+
+volumes:
+  pyvendor:

@@ -1,0 +1,6 @@
+fastapi
+langchain
+tensorflow_hub
+tensorflow_text==2.8.0rc0
+https://tf.novaal.de/core2/tensorflow-2.8.0-cp39-cp39-linux_x86_64.whl
+uvicorn

@@ -1,0 +1,2 @@
+docker compose run --rm -it embed pip install -r requirements-noavx.txt --user --upgrade
+docker compose run --rm -it embed sed -i "/import tensorflow_text/d" /mnt/vendor/lib/python3.9/site-packages/langchain/embeddings/tensorflow_hub.py
